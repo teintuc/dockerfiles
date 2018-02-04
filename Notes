@@ -1,0 +1,2 @@
+To allow docker to connect to Xor
+xhost +local:docker
