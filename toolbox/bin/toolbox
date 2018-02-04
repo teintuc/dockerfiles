@@ -2,7 +2,7 @@
 
 DOCKER="/usr/bin/docker"
 DOCKER_RUN="$DOCKER run -it --rm"
-DOCKER_OPTS="--net=host -v /tmp/toolbox:/repo"
+DOCKER_OPTS="--privileged --net=host -v /tmp/toolbox:/repo"
 
 DOCKER_IMG="teintuc/toolbox"
 
