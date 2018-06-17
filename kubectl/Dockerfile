@@ -4,5 +4,7 @@ RUN wget -O /kubectl https://storage.googleapis.com/kubernetes-release/release/v
   chmod +x /kubectl
 
 FROM scratch
+
 COPY --from=builder /kubectl /kubectl
+
 ENTRYPOINT ["/kubectl"]
