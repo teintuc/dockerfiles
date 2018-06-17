@@ -2,6 +2,8 @@ TAG=latest
 NAME=kubectl
 IMAGE=$(DOCKER_IMG_SUFFIX)/$(NAME)
 
+K8S_VERSION=$(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+
 help:
 	@echo "Usage:"
 	@echo "    make - Display this help"
@@ -15,7 +17,7 @@ help:
 all: build tag push clean
 
 build:
-	docker build -t $(IMAGE) .
+	docker build -t $(IMAGE) --build-arg K8S_VERSION=$(K8S_VERSION) . 
 
 tag:
 	docker tag $(IMAGE):$(TAG) $(IMAGE):$(TAG)
