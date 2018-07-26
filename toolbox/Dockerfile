@@ -1,11 +1,11 @@
-FROM ubuntu:latest
+FROM kalilinux/kali-linux-docker:latest
 
 MAINTAINER Charles Teinturier "teintu.c@gmail.com"
 
 RUN set -xe \
  && packages=" \
    net-tools \
-   iproute \
+   iproute2 \
    coreutils \
    findutils \
    psmisc \
@@ -25,7 +25,7 @@ RUN set -xe \
    awscli \
    jq \
    docker \
-   mysql-client \
+   default-mysql-client \
  " \
  && apt-get update \
  && apt-get install -y $packages \
