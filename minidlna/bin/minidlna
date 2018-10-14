@@ -33,7 +33,6 @@ CONTAINER_IMAGE="teintuc/minidlna"
 echo "Streaming under the name: ${HOSTNAME}"
 $DOCKER run \
   --rm --name $NAME --net=host \
-  -p $CONTAINER_PORT:$CONTAINER_PORT \
   -v $1:$CONTAINER_MEDIA \
   -e MINIDLNA_MEDIA_DIR=$CONTAINER_MEDIA \
   -e MINIDLNA_FRIENDLY_NAME=$HOSTNAME \
