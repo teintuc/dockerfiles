@@ -1,8 +1,4 @@
-TAG=latest
-NAME=kubectl
-IMAGE=$(DOCKER_IMG_SUFFIX)/$(NAME)
-
-K8S_VERSION=$(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+DOCKER=/usr/bin/docker
 
 help:
 	@echo "Usage:"
@@ -17,19 +13,19 @@ help:
 all: build tag push clean
 
 build:
-	docker build -t $(IMAGE) --build-arg K8S_VERSION=$(K8S_VERSION) . 
+	$(DOCKER) build -t $(IMAGE) .
 
 tag:
-	docker tag $(IMAGE):$(TAG) $(IMAGE):$(TAG)
+	$(DOCKER) tag $(IMAGE):$(TAG) $(IMAGE):$(TAG)
 
 push:
-	docker push $(IMAGE):$(TAG)
+	$(DOCKER) push $(IMAGE):$(TAG)
 
 clean:
-	docker rmi $(IMAGE)
+	$(DOCKER) rmi $(IMAGE)
 
 login:
-	docker login
+	$(DOCKER) login
 
 install:
 	@echo ">> Installing $(NAME)"

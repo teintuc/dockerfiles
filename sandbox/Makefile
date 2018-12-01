@@ -1,5 +1,5 @@
 TAG=latest
-NAME=minidlna
+NAME=sandbox
 IMAGE=$(DOCKER_IMG_SUFFIX)/$(NAME)
 
 include ../build/actions.mk

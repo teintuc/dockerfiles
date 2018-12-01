@@ -1,5 +1,0 @@
-#!/bin/sh
-
-set -e
-
-docker run --net=host -it --rm -e KUBECONFIG=/home/miky/.kube/config -v $HOME/.minikube:$HOME/.minikube -v $HOME/.kube:$HOME/.kube teintuc/kubectl $@
