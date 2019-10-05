@@ -1,9 +1,0 @@
-#!/bin/sh
-
-DOCKER="/usr/bin/docker"
-DOCKER_RUN="$DOCKER run -it --rm"
-DOCKER_OPTS="--privileged --net=host -v /tmp/toolbox:/repo"
-
-DOCKER_IMG="teintuc/toolbox"
-
-$DOCKER_RUN $DOCKER_OPTS $DOCKER_IMG
