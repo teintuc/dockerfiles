@@ -1,4 +1,4 @@
-FROM kalilinux/kali-linux-docker:latest
+FROM kalilinux/kali-rolling:latest
 
 MAINTAINER Charles Teinturier "teintu.c@gmail.com"
 
@@ -26,6 +26,8 @@ RUN set -xe \
    jq \
    docker \
    default-mysql-client \
+   procps \
+   sublist3r \ 
  " \
  && apt-get update \
  && apt-get install -y $packages \
