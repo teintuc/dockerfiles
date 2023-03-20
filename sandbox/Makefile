@@ -1,5 +1,5 @@
 TAG=latest
 NAME=sandbox
-IMAGE=$(DOCKER_IMG_SUFFIX)/$(NAME)
+IMAGE=teintuc/$(NAME)
 
 include ../build/actions.mk
